@@ -6,9 +6,11 @@
 function rejectAfter(ms) {
     return new Promise((resolve, reject)=>{
         setTimeout(()=>{
-            reject();
+            reject(new Error(`Rejected after ${ms}ms`));
         },ms)
     })
 }
 
 module.exports = rejectAfter;
+
+// PASSED // 
